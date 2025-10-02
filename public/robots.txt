@@ -1,0 +1,8 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://sarweshero.me/sitemap.xml
+
+# Disallow specific files if needed
+# Disallow: /private/

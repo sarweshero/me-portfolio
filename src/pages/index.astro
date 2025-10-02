@@ -16,14 +16,79 @@ import "../styles/global.css";
     <link rel="icon" type="image/svg+xml" href="/favicon.svg" />
     <meta name="viewport" content="width=device-width" />
     <meta name="generator" content={Astro.generator} />
-    <meta name="description" content={siteConfig.description} />
+    
+    <!-- SEO Meta Tags -->
+    <title>Sarweshwar (Sarweshero) - Full Stack Developer & AI Engineer | Karpagam Academy</title>
+    <meta name="description" content="Sarweshwar (Sarweshero) - Computer Science student at Karpagam Academy, Full Stack Developer, AI/ML Engineer. Expert in Django, React.js, Python, and Computer Vision. Portfolio showcasing hackathon wins and live projects." />
+    <meta name="keywords" content="Sarweshwar, Sarweshero, Sarweshwar Karpagam, Sarweshwar Full Stack, Full Stack Developer, AI Engineer, Computer Science, Karpagam Academy, Django Developer, React Developer, Python Developer, Machine Learning, Computer Vision, YOLOv8, Alumni Portal, Hackathon Winner, MSME Funded, Xyndrix Co-founder" />
+    <meta name="author" content="Sarweshwar" />
+    <meta name="robots" content="index, follow" />
+    <link rel="canonical" href="https://sarweshero.me" />
+    
+    <!-- Open Graph / Facebook -->
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://sarweshero.me" />
+    <meta property="og:title" content="Sarweshwar (Sarweshero) - Full Stack Developer & AI Engineer" />
+    <meta property="og:description" content="Computer Science student at Karpagam Academy specializing in Full Stack Development and AI/ML. Hackathon winner with live projects and startup experience." />
+    <meta property="og:image" content="https://sarweshero.me/og-image.jpg" />
+    <meta property="og:site_name" content="Sarweshwar Portfolio" />
+    
+    <!-- Twitter -->
+    <meta property="twitter:card" content="summary_large_image" />
+    <meta property="twitter:url" content="https://sarweshero.me" />
+    <meta property="twitter:title" content="Sarweshwar (Sarweshero) - Full Stack Developer & AI Engineer" />
+    <meta property="twitter:description" content="Computer Science student at Karpagam Academy specializing in Full Stack Development and AI/ML. Hackathon winner with live projects." />
+    <meta property="twitter:image" content="https://sarweshero.me/og-image.jpg" />
+    <meta property="twitter:creator" content="@sarweshero" />
+    
+    <!-- Additional SEO -->
+    <meta name="theme-color" content="#1d4ed8" />
+    <meta name="msapplication-TileColor" content="#1d4ed8" />
+    
+    <!-- Schema.org JSON-LD -->
+    <script type="application/ld+json">
+      {
+        "@context": "https://schema.org",
+        "@type": "Person",
+        "name": "Sarweshwar",
+        "alternateName": "Sarweshero",
+        "url": "https://sarweshero.me",
+        "image": "https://sarweshero.me/profile-image.jpg",
+        "sameAs": [
+          "https://linkedin.com/in/sarweshero",
+          "https://github.com/sarweshero",
+          "https://x.com/sarweshero"
+        ],
+        "jobTitle": "Full Stack Developer & AI Engineer",
+        "worksFor": {
+          "@type": "Organization",
+          "name": "Xyndrix",
+          "url": "https://xyndrix.tech"
+        },
+        "alumniOf": {
+          "@type": "EducationalOrganization",
+          "name": "Karpagam Academy of Higher Education"
+        },
+        "knowsAbout": [
+          "Full Stack Development",
+          "Artificial Intelligence",
+          "Machine Learning",
+          "Computer Vision",
+          "Django",
+          "React.js",
+          "Python",
+          "YOLOv8"
+        ],
+        "description": "Computer Science undergraduate at Karpagam Academy specializing in Full Stack Development and AI/ML technologies. Co-founder of Xyndrix and hackathon winner."
+      }
+    </script>
+    
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link
       href="https://fonts.googleapis.com/css2?family=IBM+Plex+Mono:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;1,100;1,200;1,300;1,400;1,500;1,600;1,700&display=swap"
       rel="stylesheet"
     />
-    <title>{siteConfig.name} - {siteConfig.title}</title>
   </head>
   <body>
     <Header />
@@ -35,5 +100,196 @@ import "../styles/global.css";
       <Education />
     </section>
     <Footer />
+    
+    <!-- Sticky Resume Download Button with Advanced Animations - Mobile Responsive -->
+    <div class="fixed bottom-4 right-4 sm:bottom-6 sm:right-6 z-50">
+      <!-- Pulsing Ring Animation - Responsive sizing -->
+      <div class="absolute inset-0 rounded-full bg-blue-400 animate-ping opacity-30"></div>
+      <div class="absolute inset-0 rounded-full bg-blue-500 animate-pulse opacity-40"></div>
+      
+      <!-- Main Button - Mobile Responsive -->
+      <a 
+        href="/sarwesh_resume1.pdf" 
+        download="Sarweshwar_Resume.pdf"
+        class="relative group bg-gradient-to-r from-blue-600 to-purple-600 hover:from-blue-700 hover:to-purple-700 text-white p-3 sm:p-4 rounded-full shadow-2xl hover:shadow-blue-500/50 transition-all duration-500 flex items-center justify-center transform hover:scale-110 hover:rotate-3 animate-bounce touch-manipulation"
+        title="Download Resume"
+        id="resumeButton"
+      >
+        <!-- Glowing border effect -->
+        <div class="absolute inset-0 rounded-full bg-gradient-to-r from-blue-400 to-purple-400 opacity-0 group-hover:opacity-100 blur-sm transition-opacity duration-300"></div>
+        
+        <!-- Icon with multiple animations - Responsive sizing -->
+        <div class="relative z-10 flex items-center">
+          <svg 
+            class="w-5 h-5 sm:w-6 sm:h-6 transition-all duration-500 group-hover:scale-125 group-hover:rotate-12" 
+            fill="none" 
+            stroke="currentColor" 
+            viewBox="0 0 24 24" 
+            xmlns="http://www.w3.org/2000/svg"
+          >
+            <path 
+              stroke-linecap="round" 
+              stroke-linejoin="round" 
+              stroke-width="2.5" 
+              d="M12 10v6m0 0l-3-3m3 3l3-3m2 8H7a2 2 0 01-2-2V5a2 2 0 012-2h5.586a1 1 0 01.707.293l5.414 5.414a1 1 0 01.293.707V19a2 2 0 01-2 2z"
+              class="group-hover:stroke-yellow-300 transition-colors duration-300"
+            ></path>
+          </svg>
+          
+          <!-- Text that slides in - Hidden on small screens, visible on larger screens -->
+          <span class="ml-0 group-hover:ml-3 max-w-0 group-hover:max-w-xs overflow-hidden transition-all duration-500 ease-out font-semibold whitespace-nowrap hidden sm:inline">
+            Resume
+          </span>
+        </div>
+        
+        <!-- Sparkle effects - Responsive positioning -->
+        <div class="absolute top-0 left-0 w-1.5 h-1.5 sm:w-2 sm:h-2 bg-yellow-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping" style="animation-delay: 0.1s;"></div>
+        <div class="absolute bottom-0.5 right-0.5 sm:bottom-1 sm:right-1 w-1 h-1 sm:w-1.5 sm:h-1.5 bg-pink-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping" style="animation-delay: 0.3s;"></div>
+        <div class="absolute top-1.5 right-0 sm:top-2 w-0.5 h-0.5 sm:w-1 sm:h-1 bg-green-300 rounded-full opacity-0 group-hover:opacity-100 transition-opacity duration-300 animate-ping" style="animation-delay: 0.5s;"></div>
+      </a>
+      
+      <!-- Tooltip - Mobile Responsive -->
+      <div class="absolute bottom-full right-0 mb-2 px-2 py-1 sm:px-3 sm:py-2 bg-gray-900 text-white text-xs sm:text-sm rounded-lg opacity-0 group-hover:opacity-100 transition-opacity duration-300 whitespace-nowrap pointer-events-none">
+        <div class="absolute top-full right-2 sm:right-4 w-0 h-0 border-l-4 border-r-4 border-t-4 border-transparent border-t-gray-900"></div>
+        Download Resume
+      </div>
+    </div>
+
+    <!-- Custom CSS for additional animations and mobile optimizations -->
+    <style>
+      @keyframes float {
+        0%, 100% { transform: translateY(0px) rotate(0deg); }
+        50% { transform: translateY(-8px) rotate(2deg); }
+      }
+      
+      @keyframes rainbow {
+        0% { filter: hue-rotate(0deg); }
+        100% { filter: hue-rotate(360deg); }
+      }
+      
+      @keyframes wiggle {
+        0%, 7% { transform: rotateZ(0deg); }
+        15% { transform: rotateZ(-15deg); }
+        20% { transform: rotateZ(10deg); }
+        25% { transform: rotateZ(-10deg); }
+        30% { transform: rotateZ(6deg); }
+        35% { transform: rotateZ(-4deg); }
+        40%, 100% { transform: rotateZ(0deg); }
+      }
+      
+      #resumeButton {
+        animation: float 3s ease-in-out infinite, rainbow 8s linear infinite;
+      }
+      
+      #resumeButton:hover {
+        animation: wiggle 1s ease-in-out;
+      }
+      
+      /* Glowing effect on page load */
+      @keyframes initialGlow {
+        0% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.5); }
+        50% { box-shadow: 0 0 30px rgba(59, 130, 246, 0.8), 0 0 45px rgba(147, 51, 234, 0.6); }
+        100% { box-shadow: 0 0 15px rgba(59, 130, 246, 0.5); }
+      }
+      
+      #resumeButton {
+        animation: float 3s ease-in-out infinite, rainbow 8s linear infinite, initialGlow 2s ease-in-out infinite;
+      }
+      
+      /* Mobile optimizations */
+      @media (max-width: 640px) {
+        #resumeButton {
+          animation: float 4s ease-in-out infinite, rainbow 10s linear infinite, initialGlow 3s ease-in-out infinite;
+        }
+        
+        @keyframes float {
+          0%, 100% { transform: translateY(0px) rotate(0deg); }
+          50% { transform: translateY(-6px) rotate(1deg); }
+        }
+        
+        @keyframes initialGlow {
+          0% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.4); }
+          50% { box-shadow: 0 0 20px rgba(59, 130, 246, 0.7), 0 0 30px rgba(147, 51, 234, 0.5); }
+          100% { box-shadow: 0 0 10px rgba(59, 130, 246, 0.4); }
+        }
+      }
+      
+      /* Ensure touch targets are large enough on mobile */
+      @media (pointer: coarse) {
+        #resumeButton {
+          min-width: 48px;
+          min-height: 48px;
+        }
+      }
+      
+      /* Reduce motion for users who prefer it */
+      @media (prefers-reduced-motion: reduce) {
+        #resumeButton {
+          animation: none;
+        }
+        
+        #resumeButton:hover {
+          transform: scale(1.05);
+        }
+      }
+      
+      /* High contrast mode support */
+      @media (prefers-contrast: high) {
+        #resumeButton {
+          border: 2px solid white;
+        }
+      }
+    </style>
+
+    <!-- JavaScript for additional interactivity and mobile optimizations -->
+    <script>
+      document.addEventListener('DOMContentLoaded', function() {
+        const button = document.getElementById('resumeButton');
+        
+        // Add click animation
+        button.addEventListener('click', function() {
+          this.style.transform = 'scale(0.95)';
+          setTimeout(() => {
+            this.style.transform = '';
+          }, 150);
+        });
+        
+        // Mobile-specific optimizations
+        const isMobile = window.innerWidth <= 640 || 'ontouchstart' in window;
+        
+        if (isMobile) {
+          // Reduce animation intensity on mobile
+          button.style.animationDuration = '4s, 10s, 3s';
+          
+          // Add touch feedback
+          button.addEventListener('touchstart', function() {
+            this.style.transform = 'scale(0.98)';
+          });
+          
+          button.addEventListener('touchend', function() {
+            this.style.transform = '';
+          });
+        } else {
+          // Desktop-only random sparkle effect
+          setInterval(() => {
+            if (Math.random() > 0.7) {
+              button.style.animation = 'float 3s ease-in-out infinite, rainbow 8s linear infinite, wiggle 0.5s ease-in-out';
+              setTimeout(() => {
+                button.style.animation = 'float 3s ease-in-out infinite, rainbow 8s linear infinite, initialGlow 2s ease-in-out infinite';
+              }, 500);
+            }
+          }, 3000);
+        }
+        
+        // Handle orientation changes
+        window.addEventListener('orientationchange', function() {
+          setTimeout(() => {
+            button.style.animation = 'none';
+            button.offsetHeight; // Trigger reflow
+            button.style.animation = '';
+          }, 100);
+        });
+      });
+    </script>
   </body>
 </html>
