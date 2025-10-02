@@ -2,24 +2,6 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "framework": "astro",
-  "routes": [
-    {
-      "src": "/sitemap.xml",
-      "dest": "/sitemap.xml"
-    },
-    {
-      "src": "/robots.txt", 
-      "dest": "/robots.txt"
-    },
-    {
-      "src": "/sarwesh_resume1.pdf",
-      "dest": "/sarwesh_resume1.pdf"
-    },
-    {
-      "src": "/(.*)",
-      "dest": "/$1"
-    }
-  ],
   "headers": [
     {
       "source": "/(.*)",
