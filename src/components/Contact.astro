@@ -7,11 +7,6 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'sarweshero@gmail.c
 ---
 
 <section id="contact" class="py-20 px-8 bg-gray-50">
-  <!-- Load EmailJS if configured -->
-  {emailjsPublicKey && (
-    <script src="https://cdn.jsdelivr.net/npm/@emailjs/browser@3/dist/email.min.js"></script>
-  )}
-  
   <div class="max-w-4xl mx-auto">
     <div class="text-center mb-12">
       <h2 class="text-3xl md:text-4xl font-bold text-gray-900 mb-4">
@@ -200,7 +195,7 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'sarweshero@gmail.c
   </div>
 </section>
 
-<script define:vars={{ emailjsPublicKey, emailjsServiceId, emailjsTemplateId, contactEmail }}>
+<script define:vars={{ emailjsPublicKey, contactEmail }}>
     // Load EmailJS
     (function(){
         if (emailjsPublicKey) {
@@ -237,42 +232,25 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'sarweshero@gmail.c
             formMessage.classList.add('hidden');
 
             try {
-                // Check if EmailJS is properly configured
-                if (emailjsPublicKey && emailjsServiceId && emailjsTemplateId && typeof emailjs !== 'undefined') {
-                    // Send email using EmailJS
-                    const response = await emailjs.send(
-                        emailjsServiceId,
-                        emailjsTemplateId,
-                        templateParams
-                    );
-                    
-                    if (response.status === 200) {
-                        showMessage('success', 'Message sent successfully! I\'ll get back to you soon.');
-                        form.reset();
-                    } else {
-                        throw new Error('EmailJS failed');
-                    }
-                } else {
-                    // Fallback to mailto if EmailJS is not configured
-                    console.log('EmailJS not configured, using mailto fallback');
-                    
-                    // Create mailto link as fallback
-                    const mailtoLink = `mailto:${contactEmail}?subject=${encodeURIComponent(templateParams.subject)}&body=${encodeURIComponent(`Name: ${templateParams.from_name}\nEmail: ${templateParams.from_email}\n\nMessage:\n${templateParams.message}`)}`;
-                    
-                    // Show success message
-                    showMessage('success', `Thank you for your message! Your default email client should open, or you can email me directly at ${contactEmail}`);
-                    
-                    // Open email client
-                    setTimeout(() => {
-                        window.location.href = mailtoLink;
-                    }, 1000);
-                    
-                    form.reset();
-                }
+                // Fallback to mailto since we're keeping it simple
+                console.log('Using mailto for contact form');
+                
+                // Create mailto link
+                const mailtoLink = `mailto:${contactEmail}?subject=${encodeURIComponent(templateParams.subject)}&body=${encodeURIComponent(`Name: ${templateParams.from_name}\nEmail: ${templateParams.from_email}\n\nMessage:\n${templateParams.message}`)}`;
+                
+                // Show success message
+                showMessage('success', `Thank you for your message! Your default email client will open, or you can email me directly at ${contactEmail}`);
+                
+                // Open email client
+                setTimeout(() => {
+                    window.location.href = mailtoLink;
+                }, 1000);
+                
+                form.reset();
                 
             } catch (error) {
                 console.error('Error sending message:', error);
-                showMessage('error', `Sorry, there was an error sending your message. Please email me directly at ${contactEmail}`);
+                showMessage('error', `Sorry, there was an error. Please email me directly at ${contactEmail}`);
             }
 
             // Reset button state
@@ -306,6 +284,13 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'sarweshero@gmail.c
                 this.parentElement.classList.remove('focused');
                 if (this.value.trim() !== '') {
                     this.classList.add('has-content');
+                } else {
+                    this.classList.remove('has-content');
+                }
+            });
+        });
+    });
+</script>
                 } else {
                     this.classList.remove('has-content');
                 }
