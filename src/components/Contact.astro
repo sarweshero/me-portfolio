@@ -232,10 +232,19 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'sarweshero@gmail.c
             formMessage.classList.add('hidden');
 
             try {
-                // Fallback to mailto since we're keeping it simple
-                console.log('Using mailto for contact form');
+                // Send email using EmailJS
+                const serviceID = import.meta.env.PUBLIC_EMAILJS_SERVICE_ID;
+                const templateID = import.meta.env.PUBLIC_EMAILJS_TEMPLATE_ID;
+
+                await emailjs.send(serviceID, templateID, templateParams);
                 
-                // Create mailto link
+                // Show success message
+                showMessage('success', 'Thank you! Your message has been sent successfully.');
+                form.reset();
+                
+            } catch (error) {
+                console.error('Error sending message:', error);
+                // Fallback to mailto if EmailJS fails
                 const mailtoLink = `mailto:${contactEmail}?subject=${encodeURIComponent(templateParams.subject)}&body=${encodeURIComponent(`Name: ${templateParams.from_name}\nEmail: ${templateParams.from_email}\n\nMessage:\n${templateParams.message}`)}`;
                 
                 // Show success message
@@ -247,10 +256,6 @@ const contactEmail = import.meta.env.PUBLIC_CONTACT_EMAIL || 'sarweshero@gmail.c
                 }, 1000);
                 
                 form.reset();
-                
-            } catch (error) {
-                console.error('Error sending message:', error);
-                showMessage('error', `Sorry, there was an error. Please email me directly at ${contactEmail}`);
             }
 
             // Reset button state

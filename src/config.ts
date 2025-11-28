@@ -106,6 +106,19 @@ export const siteConfig = {
       ],
     },
     {
+      company: "Code Craft",
+      title: "Back-end Development Intern",
+      dateRange: "Nov 2025 – Dec 2025",
+      bullets: [
+        "Built RESTful APIs with Django and Django REST Framework, including CRUD operations and input validation",
+        "Integrated PostgreSQL using Django ORM with migrations, relational modeling, and optimized queries",
+        "Implemented secure JWT-based authentication and role-based access control",
+        "Added Redis caching for frequently accessed endpoints with invalidation and expiry mechanisms",
+        "Developed a hotel booking backend API as a mini-project, including room listings, search filters, bookings, and user access control",
+        "Worked with Python, Django, DRF, PostgreSQL, Redis, JWT, and optional MongoDB for document-based modules"
+      ],
+    },
+    {
       company: "Xarlex",
       title: "Fullstack & AI Intern",
       dateRange: "May 2024 - Jul 2024",
